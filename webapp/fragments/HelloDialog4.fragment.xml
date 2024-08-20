@@ -1,0 +1,15 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+   <Dialog id="helloDialog4" title="Clarification">
+
+      <form:SimpleForm>
+         <Label text="Clarification by verifier"  design="Bold"></Label>
+         <Text text="{ModelForm03>/Data/0/clarification}"></Text>
+        
+      </form:SimpleForm>
+      <beginButton>
+         <Button text="ok" type="Emphasized" icon="sap-icon://decline" press="onCloseDialog4"/>
+      </beginButton>
+   </Dialog>
+</core:FragmentDefinition>

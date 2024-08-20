@@ -1,0 +1,28 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+   <Dialog id="helloDialog" title="View Clarification">
+
+      <form:SimpleForm>
+         <Label text="Description of Clarification by verifier" id="label01" design="Bold" visible="false" ></Label>
+         <Text text="{ModelForm01>/Data/0/verifierclarification}"  id="text1"  visible="false"></Text>
+         <Label text="Description of Clarification by Actioner" design="Bold" id="label02" visible="false"></Label>
+         <Text text="{ModelForm03>/Data/0/clarification3}" id="text2"  visible="false"></Text>
+         <Label text="Clarification" design="Bold"></Label>
+         <Input id="requester" ></Input>
+      </form:SimpleForm>
+
+
+      <endButton>
+         <Button text="Cancel" type="Reject" icon="sap-icon://decline" press="onCloseDialog"/>
+      </endButton>
+      <beginButton>
+         <Button text="Ok" type="Success" press="clarificationsend"/>
+      </beginButton>
+
+
+
+
+
+   </Dialog>
+</core:FragmentDefinition>

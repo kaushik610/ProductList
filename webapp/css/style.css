@@ -1,0 +1,53 @@
+.sapUiSizeCompact .sapUiFormContainerTitle>.sapUiFormTitle{
+    text-decoration: underline;
+}
+.loginPage {
+    background-image: url("https://static.vecteezy.com/system/resources/previews/038/817/972/non_2x/ai-generated-minimalist-with-a-single-flower-symbolizing-a-mother-s-love-and-nurturing-presence-free-photo.jpeg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat; 
+    width: 100vw;
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 1);
+
+}
+@media (max-width: 768px) {
+    .loginPage {
+        background-size: cover;
+    }
+}
+
+.label{
+    color: black;
+}
+#__icon0{       
+    font-size: 6rem;
+    color: white;
+}
+.hbox{
+    margin-left: 100px;
+}
+#container-formdesign---View1--checkBox-label-bdi{
+    color: black;
+    font-weight: bold;
+
+}
+
+.sapUxAPObjectPageSectionHeading{
+    padding: 0rem 0rem 0rem 0rem;
+    margin: 0rem;
+}
+#container-formdesign---View2--ActionerSection{
+    margin-top: 1rem;
+}
+#container-formdesign---View2--RequesterSection{
+    margin-top: 0rem;
+
+}
+#container-formdesign---View2--VerifierSection{
+    margin-top: 1rem;
+
+}

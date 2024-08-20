@@ -1,0 +1,35 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+   xmlns="sap.m"
+   xmlns:core="sap.ui.core">
+   <Dialog id="Dialog" title="Registration" icon="sap-icon://add-activity">
+
+      <form:SimpleForm >
+
+                  <Label text="Name" design="Bold" id="UserNameLabel1"></Label>
+                 <Input placeholder="Enter Your UserName or UserID" id="UserNameInput" liveChange="UserNameInputliveChange"></Input>
+                 <Label text="Create Password" design="Bold" id="CreatePasswordLabel"></Label>
+                 <Input type="Password" placeholder="Create Password" id="CreatePasswordInput" liveChange="CreatePasswordInputliveChange"></Input>
+                <Label text="Confirm Password" design="Bold" id="ConfirmPasswordLabel"></Label>
+                <Input type="Password" placeholder="Confirm Password" id="ConfirmPasswordInput"></Input>
+                 <CheckBox text="show password" class="label" id="ShowcheckBox" select="ocheckboxRegistration" ></CheckBox>
+
+
+
+        
+      </form:SimpleForm>
+
+
+
+      <endButton>
+         <Button text="Cancel" type="Reject" icon="sap-icon://decline" press="onCloseDialog"/>
+      </endButton>
+      <beginButton>
+         <Button text="Ok" type="Success" press="onRegistrationForm"/>
+      </beginButton>
+
+
+
+
+
+   </Dialog>
+</core:FragmentDefinition>

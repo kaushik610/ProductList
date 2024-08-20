@@ -1,0 +1,266 @@
+<mvc:View controllerName="formdesign.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
+    xmlns="sap.uxap"
+    xmlns:unified="sap.ui.unified"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:upload="sap.m.upload"
+    xmlns:u="sap.ui.unified"
+    xmlns:m="sap.m"
+    xmlns:layout="sap.ui.layout">
+
+    <!-- <ObjectPageLayout id="ObjectPageLayout" enableLazyLoading="true" beforeNavigate="onBeforeNavigate" useIconTabBar="true" showTitleInHeaderContent="false" upperCaseAnchorBar="false" sectionChange="onSectionChange">
+        <headerTitle>
+            <ObjectPageDynamicHeaderTitle class="objhd">
+                <heading>
+                    <m:Title text="Resident Certificate" textAlign="Center"/>  
+                </heading>
+            </ObjectPageDynamicHeaderTitle>
+        </headerTitle>
+
+        <headerContent >
+                       <f:SimpleForm editable="true" id="form" layout="ColumnLayout" columnsXL="6" columnsL="4" columnsM="3">
+                <f:content>
+                   
+                    <m:Label text="Employee Name" design="Bold" />
+                    <m:Input id="EmployeeName" liveChange="liveChangeEmployeeName" required="true" />
+                    <m:Label text="Date of application" design="Bold" />
+                    <m:Input type="Date" id="Dateofapplication" required="true" />
+             
+                    <m:Label text="Employee ID" design="Bold" />
+                    <m:Input id="EmployeeID" type="Number" required="true" />
+                    <m:Label text="Application No" design="Bold" />
+                    <m:Input type="Number" id="ApplicationNo" required="true" value="1" />
+
+
+                    <m:Button text="Page2" press="onPage2"></m:Button>
+                </f:content>
+            </f:SimpleForm>
+        </headerContent>
+
+        <sections>
+        
+            <ObjectPageSection title="Requester" titleUppercase="false" id="RequesterSection">
+                <heading>
+                    <m:MessageStrip showCloseButton="true" text="" type="None" id="error" visible="false" showIcon="true" />
+                </heading>
+                <subSections>
+                    <ObjectPageSubSection >
+                        <m:VBox>
+                            <f:SimpleForm id="SimpleFormChangeColumn_threeGroups234" editable="true" layout="ColumnLayout" columnsM="2" columnsL="3" columnsXL="3" singleContainerFullSize="true">
+                                <f:content>
+                                    <m:RadioButton id="hideInputsRadioButton" activeHandling="true" selected="true" text="Self" select="onHideInputsSelect" />
+                                    <m:RadioButton id="showInputsRadioButton" text="Subordinate" select="onShowInputsSelect" />
+                                    <m:Label text="Format" design="Bold" required="true" />
+                                    <m:CheckBox text="Soft Copy" id="checkBox1" select="onCheckBox1Select" />
+                                    <m:CheckBox id="checkBox2" select="onCheckBox2Select" text="Hard Copy" />
+                                    <m:Label text="Language" design="Bold" />
+                                    <m:ComboBox id="languageSelect" width="14rem" selectedKey="1" required="true">
+                                        <m:items>
+                                            <core:Item key="1" text="Gujarati" />
+                                            <core:Item key="2" text="English" />
+                                            <core:Item key="3" text="Hindi" />
+                                        </m:items>
+                                    </m:ComboBox>
+
+                                    <m:Label id="label" design="Bold" text="what do you want to you request?" />
+                                    <m:Input id="Request" required="true" value="Residence Certificate." />
+
+                                    <core:Title />
+                                    <m:Label id="label1" text="Employee ID " design="Bold" />
+                                    <m:Input id="input1" visible="false" type="Number" required="true" />
+                                    <m:Label id="myLabel" design="Bold" visible="false" text="Personal Email ID" />
+                                    <m:Input type="Email" visible="false" id="myInput" liveChange="livechangePersonalEmailID" required="true" />
+                                    <m:Label text="Visa Company" design="Bold" />
+                                    <m:Input id="VisaCompony" required="true" />
+
+                                    <core:Title />
+                                    <m:Label id="label2" design="Bold" text="Employee Details" />
+                                    <m:Input id="input2" visible="false" required="true" />
+                                    <m:Label id="labelp" design="Bold" text="Primary Email ID" />
+                                    <m:Input id="PrimaryEmailID" required="true" liveChange="livechangePrimaryEmailID" />
+                                    <m:Label text="Working Company" design="Bold" />
+                                    <m:Input id="WorkingCompony" required="true" />
+                                </f:content>
+                            </f:SimpleForm>
+                            
+                            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsM="1" columnsL="1" columnsXL="1" singleContainerFullSize="true">
+                                <m:Label text="Remarks" design="Bold" />
+                                <m:TextArea maxLength="40" id="Remarks" height="70px" required="true" />
+                                <m:Toolbar>
+                                    <m:Bar>
+                                        <m:contentRight>
+                                            <m:Button type="Success" text="Submit" icon="sap-icon://accept" press="onsubmit" />
+                                            <m:Button type="Reject" text="Clear" icon="sap-icon://decline" press="onclear" />
+                                            <m:Button type="Attention" text="View  Clarification" visible="false" id="ViewClarification" press="onopendialog" />
+                                        </m:contentRight>
+                                    </m:Bar>
+                                </m:Toolbar>
+                            </f:SimpleForm>
+                        </m:VBox>
+                        
+                    </ObjectPageSubSection>
+                    
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="Verifier" titleUppercase="false" id="VerifierSection">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <m:VBox>
+                            <f:SimpleForm id="SimpleFormDisplay480_12120" editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                                <f:content>
+                                    <core:Title />
+                                    <m:Label text="Request No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input id="RequestNo" value="{ModelForm1>/Data/0/ApplicationNo}" enabled="false" />
+
+                                    <core:Title />
+                                    <m:Label text="Request Date" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input type="Date" id="RequestDate" value="{ModelForm1>/Data/0/Date}" enabled="false" />
+
+                                    <core:Title text="Requester Details" />
+
+                                    <m:Label text="Applicant Employee No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input id="ApplicantEmployeeNo" enabled="false" />
+                                    <m:Label text=" Requester Employee No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input id="RequesterEmployeeNo" enabled="false" />
+                                    <m:Label text="Employee Name" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm1>/Data/0/EmployeeName}" id="EmployeeName1" enabled="false" />
+                                    <m:Label text="Personal Email ID" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm1>/Data/0/myInput}" id="PersonalEmailID" enabled="false" />
+
+                                    <core:Title text="Request Details" />
+
+                                    <m:Label text="What do you want to Request?" design="Bold" />
+                                    <m:Input value="{ModelForm1>/Data/0/Request}" id="Request1" enabled="false" />
+                                    <m:Label text="Format" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input id="Format1" enabled="false" />
+                                    <m:Label text="Language" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm1>/Data/0/languageSelect}" id="Language" enabled="false" />
+                                    <m:Label design="Bold" text="Visa Company" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm1>/Data/0/VisaCompony}" id="VisaCompany1" enabled="false" />
+                                    <m:Label design="Bold" text="Working Company" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm1>/Data/0/WorkingCompony}" id="WorkingCompany1" enabled="false" />
+                                </f:content>
+                            </f:SimpleForm>
+                            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsM="1" columnsL="1" columnsXL="1" singleContainerFullSize="true">
+                                <m:Label text="Requester Comments" design="Bold" class="sapUiTinyMarginTop" />
+                                <m:TextArea maxLength="40" height="70px" id="RequesterComments" value="{ModelForm1>/Data/0/Remarks}" enabled="false" />
+                                <m:Label text="Verifier Comments" design="Bold" class="sapUiTinyMarginTop" />
+                                <m:TextArea maxLength="40" height="70px" id="verifierComments" />
+                                <m:Toolbar>
+                                    <m:Bar>
+                                        <m:contentRight>
+                                            <m:Button type="Success" text="Approve" icon="sap-icon://accept" press="onSubmit1" />
+                                            <m:Button type="Reject" text="Reject" icon="sap-icon://decline" press="onclear1" />
+                                            <m:Button type="Attention" icon="sap-icon://message-information" text="Clarification" press="onopendialog1" id="Clarification2" />
+                                            <m:Button type="Accept" text="View requester Clarification" visible="false" id="view" press="onopendialog2" />
+                                        </m:contentRight>
+                                    </m:Bar>
+                                </m:Toolbar>
+                            </f:SimpleForm>
+                        </m:VBox>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+
+            <ObjectPageSection title="Actioner" titleUppercase="false" id="ActionerSection" visible="{Request1>/Actioner}">
+                <subSections>
+                    <ObjectPageSubSection>
+                        <m:VBox>
+                            <f:SimpleForm editable="false" layout="ResponsiveGridLayout" labelSpanXL="4" labelSpanL="4" labelSpanM="12" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="0" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="2" columnsM="1" singleContainerFullSize="false">
+                                <f:content>
+                                    <core:Title />
+                                    <m:Label text="Request No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/RequestNo}" id="RequestNo1" enabled="false" />
+
+                                    <core:Title />
+                                    <m:Label text="Request Date" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input type="Date" value="{ModelForm2>/Data/0/RequestDate}" id="RequestDate1" enabled="false" />
+
+                                    <core:Title text="Requester Details" />
+                                    <m:Label text="Applicant Employee No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/ApplicantEmployeeNo}" id="ApplicantEmployeeNo1" enabled="false" />
+                                    <m:Label text=" Requester Employee No" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/RequesterEmployeeNo}" id="RequesterEmployeeNo1" enabled="false" />
+                                    <m:Label text="Employee Name" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/EmployeeName}" id="EmployeeName2" enabled="false" />
+                                    <m:Label text="Personal Email ID" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/PersonalEmailID}" id="PersonalEmailID1" enabled="false" />
+
+                                    <core:Title text="Request Details" />
+                                    <m:Label text="What do you want to Request?" design="Bold" />
+                                    <m:Input value="{ModelForm2>/Data/0/Request}" id="Request2" enabled="false" />
+                                    <m:Label text="Format" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input id="Format2" value="{ModelForm2>/Data/0/Format}" enabled="false" />
+                                    <m:Label text="Language" design="Bold" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/Language}" id="Language2" enabled="false" />
+                                    <m:Label design="Bold" text="Visa Company" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/VisaCompany}" id="VisaCompany2" enabled="false" />
+                                    <m:Label design="Bold" text="Working Company" class="sapUiTinyMarginTop" />
+                                    <m:Input value="{ModelForm2>/Data/0/WorkingCompany}" id="WorkingCompany2" enabled="false" />
+                                </f:content>
+                            </f:SimpleForm>
+
+                            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" columnsM="1" columnsL="1" columnsXL="1" singleContainerFullSize="true">
+                                <m:Label text="Requester Comments" design="Bold" class="sapUiTinyMarginTop" />
+                                <m:TextArea maxLength="40" height="70px" value="{ModelForm2>/Data/0/RequesterComments}" enabled="false" id="RequesterComments2" />
+                                <m:Label text="Verifier Comments" design="Bold" class="sapUiTinyMarginTop" />
+                                <m:TextArea maxLength="40" height="70px" value="{ModelForm2>/Data/0/verifierComments}" enabled="false" id="VerifierComments2" />
+                                <m:Label text="Actioner Comments" design="Bold" class="sapUiTinyMarginTop" />
+                                <m:TextArea maxLength="40" height="70px" id="ActionerComments2" />
+                                <m:Toolbar>
+                                    <m:Bar>
+                                        <m:contentRight>
+                                            <m:Button type="Success" text="Approve" icon="sap-icon://accept" press="onsubmit2" />
+                                            <m:Button type="Reject" text="Reject" icon="sap-icon://decline" press="onclear2" />
+                                            <m:Button type="Attention" icon="sap-icon://message-information" text="clarification" press="onopendialog3" id="Clarification1"/>
+                                            <m:Button type="Accept" text="View requester Clarification" visible="false" id="view1" press="onopendialog4" />
+                                        </m:contentRight>
+                                    </m:Bar>
+                                </m:Toolbar>
+                            </f:SimpleForm>
+                        </m:VBox>
+                    </ObjectPageSubSection>
+                </subSections>
+            </ObjectPageSection>
+        </sections>
+    </ObjectPageLayout> -->
+
+
+
+
+    <m:Page class="sapUiContentPadding loginPage" showHeader="false">
+<m:HBox justifyContent="Start" alignContent="Center" alignItems="Center" wrap="Wrap" class="sapUiLargeMarginTop hbox">
+				<f:SimpleForm id="SimpleFormDisplay354" backgroundDesign="Transparent" layout="ResponsiveGridLayout" columnsXL="6" columnsL="4" columnsM="3">
+			<f:content>
+
+    <core:Icon src="sap-icon://customer" class="sizeicon"></core:Icon>
+
+
+                
+
+               
+				<m:Label text="Employee Name" design="Bold" class="label"  id="EmployeeNameLoginLabel"/>
+				<m:Input id="EmployeeNameLogin" liveChange="EmployeeNameLogin" class="input" />
+                <m:Label text="Employee ID" design="Bold" class="label"  id="EmployeeIDLoginLabel"/>
+				<m:Input  id="EmployeeIDLogin"  liveChange="EmployeeIDLogin" />
+                <m:Label text="Password"  design="Bold" class="label" id="PasswordLabel"/>
+				<m:Input type="Password"  liveChange="PasswordLogin" id="password"  required="true" />
+                <m:VBox>			
+                <m:CheckBox text="show password" class="label" id="checkBox" select="ocheckbox" ></m:CheckBox>
+                <m:HBox>
+                <m:Button text="Login" press="onPage2" class="sapUiMediumMarginEnd loginbutton" width="100%" type="Emphasized"></m:Button>
+                <m:Button text="Registration" press="onRegistration" class="sapUiMediumMarginBegin loginbutton" width="100%" type="Emphasized"></m:Button>
+             </m:HBox>
+             </m:VBox>
+
+			</f:content>
+		</f:SimpleForm>
+				</m:HBox>
+
+
+    </m:Page>
+</mvc:View>

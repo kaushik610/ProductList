@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns:form="sap.ui.layout.form"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog id="helloDialog3" title="Description">
+        <form:SimpleForm>
+            <Label text="Description of Clarification" design="Bold" ></Label>
+            <Input id="actioner"></Input>
+        </form:SimpleForm>
+        <endButton>
+            <Button text="close" type="Emphasized" icon="sap-icon://decline" press="onCloseDialog3"/>
+        </endButton>
+        <beginButton>
+            <Button text="Submit" type="Success" press="clarificationsend3"/>
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
